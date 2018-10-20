@@ -1,0 +1,80 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    display: flex;
+    width: 100vw;
+    height: 10vh;
+    padding: 0 10px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: blanchedalmond;
+    border: 1px solid lightgrey;
+}
+
+header img{
+    width: 30px;
+    height: 30px;;
+}
+
+h1{
+    display: flex;
+    margin: 0;
+    align-items: center;
+    height: 10px;
+    font-size: 15pt;
+}
+
+h1 span{
+    margin: 2px;
+    color: rgb(190, 17, 17);
+}
+
+.busca{
+    display: flex;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    justify-content: space-between;
+}
+
+.busca input{
+    margin: 0;
+    padding: 0 5px;
+    width: 64vw;
+
+}
+
+.busca select{
+    margin: 0;
+    width: 34vw;
+}
+
+#msg{
+    display: flex;
+    justify-content: center;
+    margin: 50px auto;
+    width: 70vw;
+    height: 200px;
+    font-size: 20pt;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100vw;
+    background-color: blanchedalmond;
+}
+
+footer>div{
+    display: flex;
+    justify-content: space-evenly;
+    height: 90%;
+    width: 75%;
+}
