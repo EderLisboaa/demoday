@@ -1,19 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
         <%- include('shared/head') %>
-
-<body>
-    <!-- Este cabecalho é apenas um modelo. Deixei o posicionamento dos itens da forma que planejamos.
-        Achei melhor deixar assim e definirmos logo, nome e cor juntos 
-        Percebam que dem uma div vazia ali, ela está sendo usada para facilitar o posicionamento com
-        justify-content: space-between, assim fica menu na esquerda, logo no meio e a div vazia no fim-->
-   
+<body>     
         <%- include('shared/header') %>
-
-    <!-- Na section ficara primeiro o campo de busca e no meio ficara o resultado da busca (os hospitais)
-        na div com o id="msg" está a orientação para o usuario pesquisar. Após a pesquisa ela deve sumir
-        e aparecera a lista de hospitais -->
     <section>
         <div class="busca">
             <input type="search" placeholder="Buscar...">
@@ -26,10 +15,7 @@
         <div id="msg">
             <p>Utilize o campo <strong>Categorias</strong> para definir o tipo de busca</p>
         </div>
-    </section>
-    <!-- No footer ficara alguns itens igual o do menu, eu vi que o footer do mercado livre é assim
-        a div dentro do footer serve para centralizar os itens com mais facilidade -->
-   
+    </section>   
         <%- include('shared/footer') %>
 </body>
 </html>
