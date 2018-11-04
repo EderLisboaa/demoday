@@ -1,4 +1,15 @@
-@media screen and (max-width: 1820px){
+/* Não devemos nos precipitar em criar um arquivo de responsividade por enquanto
+acredito que primeiro devemos fazer a pagina funcionar na versão mobile 
+depois acrescentamos a responsividade, que não será tão dificil eu acredito.
+
+E faltou comentário neste arquivo. precisamos que todas as mudanças fiquem clara
+para todos, para que tenhamos mais facilidade para fazer alteções.
+
+---Eder*/
+
+
+
+/* @media screen and (max-width: 1820px){
     body{
         margin: 0;
         overflow-x: hidden;
@@ -120,4 +131,4 @@
     .toggle.active span:nth-child(3){
         transform: scaleX(0);
     }
-    }
+    } */

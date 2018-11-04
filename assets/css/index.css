@@ -1,19 +1,20 @@
-@media screen and (max-width: 850px){
 body{
+    height: 100%;
     margin: 0;
-    overflow-x: hidden;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
 }
 
 header{
     float: left;
     display: flex;
+    position: sticky;
     width: 100vw;
     height: 10vh;
-    padding: 0 1px;
     justify-content: space-around;
     align-items: center;
     background-color: #007c8a;
-    border: 0.5px solid black;
 }
 
 header img{
@@ -46,12 +47,16 @@ h1 span{
     margin: 0;
     padding: 0 5px;
     width: 64vw;
-
 }
 
 .busca select{
     margin: 0;
     width: 34vw;
+}
+
+section{
+    height: 80vh;
+    width: 100vw;
 }
 
 #msg{
@@ -64,12 +69,11 @@ h1 span{
 }
 
 footer{
-    position: fixed;
     bottom: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100px;
+    height: 20vh;
     width: 100vw;
     background-color: #003644; 
 }
@@ -79,15 +83,64 @@ div a{
     cursor: pointer;
     text-transform: uppercase;
 }
+
 a{
     text-decoration: none;  
 }
-footer>div{
+
+footer .container{
     display: flex;
     justify-content: space-evenly;
     height: 90%;
     width: 75%;
 }
+
+#containerMenu{
+    width: 100vw;
+    height: 100%;
+    position: fixed;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.425);
+}
+
+.menu{
+    display: none;
+    height: 100%;
+    width: 70vw;
+    position: fixed;
+    border: 1px solid black;
+    background-color: white;
+    padding: 20px;
+}
+
+.menuCabecalho{
+    display: flex;
+    align-items: center;
+}
+
+.menu img{
+    border-radius: 50%;
+    border: 1px solid black;
+    width: 50px;
+    margin-right: 20px;
+}
+
+.itensMenu{
+    display: flex;
+    flex-direction: column;
+}
+
+.itensMenu li{
+    list-style: none;
+    padding: 5px 0px;
+}
+
+ul{
+    padding: 0px;
+}
+
+
+/* este código está relacionado ao Jquery */
 .toggle{
     cursor: pointer;
 }
@@ -119,5 +172,4 @@ footer>div{
 }
 .toggle.active span:nth-child(3){
     transform: scaleX(0);
-}
 }

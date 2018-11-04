@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-        <%- include('shared/head') %>
+<%- include('shared/head') %>
 <body>     
-        <%- include('shared/header') %>
+    <%- include('shared/header') %>
     <section>
+        <div id="containerMenu">
+            <div class="menu">
+                <p class="menuCabecalho"><img src="/assets/icons/icons8-instagram-filled-100.png" alt=""> Bem Vindo !</p>
+                <div class="itensMenu">
+                    <ul>
+                        <li><a href="#">Minha Conta</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
         <div class="busca">
-            <input type="search" placeholder="Buscar...">
-            <select name="seletor" id="seletor">
+            <input id="input_busca" type="search" placeholder="Buscar...">
+            <select id="select_seletor" name="seletor" id="seletor">
                 <option value="categoria">Categorias</option>
                 <option value="hospital">Hospital</option>
                 <option value="problema">Problema</option>
@@ -16,6 +27,6 @@
             <p>Utilize o campo <strong>Categorias</strong> para definir o tipo de busca</p>
         </div>
     </section>   
-        <%- include('shared/footer') %>
+    <%- include('shared/footer') %>
 </body>
 </html>
