@@ -59,7 +59,7 @@ section{
     width: 100vw;
 }
 
-#msg{
+.msg{
     display: flex;
     justify-content: center;
     margin: 50px auto;

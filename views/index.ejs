@@ -15,15 +15,34 @@
                 </div>
             </div>
         </div>
-        <div class="busca">
-            <input id="input_busca" type="search" placeholder="Buscar...">
+
+        <!-- este formulário envia os dados inseridos nos campos para o back-end assim que a tecla enter
+        é pressionada no campo de texto -->
+        <form class="busca" method="POST">
             <select id="select_seletor" name="seletor" id="seletor">
                 <option value="categoria">Categorias</option>
                 <option value="hospital">Hospital</option>
                 <option value="problema">Problema</option>
             </select>
-        </div>
-        <div id="msg">
+            <input id="input_busca" name="item" type="search" placeholder="Buscar...">
+        </form>
+
+        <!-- O back-end envia uma lista com itens para ca que conterá os hospitais buscados
+        o for é usado para percorrer essa lista e criar um <li></li> para cada item dessa lista 
+    
+            O try {}catch(err){}   serve para tratar erros. No caso ele não deixa a aplicação parar
+        quando ela não receber lista nenhuma-->
+        <ul class="listaHospitais">
+            <% try{
+            for(let item of lista){ %>
+                <li><%= item %></li>
+            <% }} catch(err){
+                console.log("lista vazia");
+            } %>
+        </ul>
+        <!-- enqunto a lista estiver vazia, esta mensagem irá aparecer. assim que for feito uma busca
+        esta mensagem irá ficar display none e o resultado da busca irá aparecer -->
+        <div class="msg">
             <p>Utilize o campo <strong>Categorias</strong> para definir o tipo de busca</p>
         </div>
     </section>   

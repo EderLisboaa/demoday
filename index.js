@@ -4,15 +4,27 @@
 // as alterações feitas no front-end 
 
 const express = require ('express');
+const bodyParser = require('body-parser');
 
 const app = express();
+app.use(bodyParser.urlencoded());
 
 app.set('view engine','ejs');
 
 app.use('/assets', express.static('assets'));
 
+// estes dados são enviados na lista. Aqui é apenas um exemplo. Será inserido nesta variável
+// os dados dos hospitais que estão contidos no banco de dados.
+let dados = ["eder", "kayke"];
+
 app.get('/', (req, res)=>{
     res.render('index');
+});
+
+app.post('/', (req, res)=>{
+    console.log(req.body.item);
+    console.log(req.body.seletor);
+    res.render('index', {'lista': dados});
 });
 
 
