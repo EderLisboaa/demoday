@@ -5,6 +5,7 @@
 
 const express = require ('express');
 const bodyParser = require('body-parser');
+const fs = require('fs');
 
 const app = express();
 app.use(bodyParser.urlencoded());
@@ -24,7 +25,30 @@ app.get('/', (req, res)=>{
 app.post('/', (req, res)=>{
     console.log(req.body.item);
     console.log(req.body.seletor);
-    res.render('index', {'lista': dados});
+    fs.readFile("dados.csv",{encoding: 'utf-8'}, function(erro, dados){
+       let linhas = dados.split('\n');
+       let hospitais = [];
+
+       for(linha of linhas){
+           let colunas = linha.split(',');
+           let imagem = colunas[0];
+           let nome = colunas[1];
+           hospitais.push({
+               'imagem': imagem,
+                'nome': nome
+        });
+       }
+    //     let hospitais = [];
+    //     for(let dado of dados){
+    //         hospitais.push({
+    //             'imagem': imagem,
+    //              'nome': nome
+    //             });
+    //     }
+    res.render('index', {'lista': hospitais});
+    });
+
+
 });
 
 

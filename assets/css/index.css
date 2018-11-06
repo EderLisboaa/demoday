@@ -55,7 +55,6 @@ h1 span{
 }
 
 section{
-    height: 80vh;
     width: 100vw;
 }
 
@@ -130,12 +129,28 @@ footer .container{
     flex-direction: column;
 }
 
-.itensMenu li{
+li{
+    display: flex;
     list-style: none;
-    padding: 5px 0px;
+    margin: 0;
+    margin: 5px 0px;
+    border: 0.7px solid black;
+    width: 100vw;
+    max-width: 1534px;
+}
+
+li img{
+    margin: 10px;
+    width: 130px;
+    height: 130px;
 }
 
 ul{
+    padding: 0px;
+}
+
+.lista{
+    display: flex;
     padding: 0px;
 }
 
