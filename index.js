@@ -6,7 +6,8 @@
 const express = require ('express');
 const bodyParser = require('body-parser');
 const fs = require('fs');
-const db = require('express-mongo-db')
+const db = require('express-mongo-db');
+const controler = require('./controlers/routControler');
 
 const app = express();
 app.use(bodyParser.urlencoded());
@@ -18,39 +19,8 @@ app.use('/assets', express.static('assets'));
 
 // estes dados são enviados na lista. Aqui é apenas um exemplo. Será inserido nesta variável
 // os dados dos hospitais que estão contidos no banco de dados.
-let dados = ["eder", "kayke"];
 
-app.get('/', (req, res)=>{
-    res.render('index');
-});
-
-app.post('/', (req, res)=>{
-    console.log(req.body.item);
-    console.log(req.body.seletor);
-
-    req.db.collection('hospitais').find({descricao:req.body.item.toUpperCase()}).toArray((erro, dados)=>{
-        if(erro){
-            res.send('<h1 style="fontSize:300px">Erro</h1>');
-        }
-        console.log(dados);
-        res.render('index', {lista: dados});
-    })
-
-});
-
-app.get("/adm", (req,res)=>{
-    res.render("adm");
-});
-
-app.post("/adm", (req,res)=>{
-    req.db.collection('hospitais').insert({
-        nome:       req.body.nome.toUpperCase(),
-        img:        req.body.img,
-        descricao:  req.body.descricao.toUpperCase()
-        });
-    res.render("adm");
-})
-
+controler(app);
 
 app.listen(3000, () => {
     console.log('Servidor iniciado...');
