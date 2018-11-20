@@ -36,7 +36,7 @@
                     <ul class="listaHospitais">
                         <% try{
                             for(let item of lista){ %>
-                                <li><img src="<%= item.imagem %>" alt=""> <p><%= item.nome %></p></li>
+                                <li class="hospital"><img src="<%= item.img %>" alt="item.nome"><p><%= item.nome %></p></li>
                                 <% }} catch(err){
                                     console.log("lista vazia");
                                 } %>

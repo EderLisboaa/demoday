@@ -67,6 +67,11 @@ section{
     font-size: 20pt;
 }
 
+.hospital:hover{
+    cursor: pointer;
+    background-color: lightblue;
+}
+
 footer{
     bottom: 0;
     display: flex;
@@ -129,7 +134,7 @@ footer .container{
     flex-direction: column;
 }
 
-li{
+.hospital {
     display: flex;
     list-style: none;
     margin: 0;
@@ -137,6 +142,11 @@ li{
     border: 0.7px solid black;
     width: 100vw;
     max-width: 1534px;
+}
+
+.menu li {
+    list-style: none;
+    margin: 5px;
 }
 
 li img{
