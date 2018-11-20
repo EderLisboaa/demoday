@@ -15,7 +15,6 @@ module.exports = function (app){
         
     });
     
-    
     app.get("/adm", (req,res)=>{
         res.render("adm");
     });
@@ -27,5 +26,9 @@ module.exports = function (app){
             descricao:  req.body.descricao.toUpperCase()
         });
         res.render("adm");
-    })
+    });
+
+    app.get('/hospital', (req,res)=>{
+        res.render('hospital');
+    });
 }
