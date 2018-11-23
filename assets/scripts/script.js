@@ -1,17 +1,20 @@
-let menu = document.querySelector(".menu");
-let containerMenu = document.querySelector("#containerMenu");
-let btnMenu = document.querySelector(".toggle");
+let menu = document.querySelector('.burguer');
+let barra1 = document.querySelector('.barrinha:nth-child(1)');
+let barra2 = document.querySelector('.barrinha:nth-child(2)');
+let barra3 = document.querySelector('.barrinha:nth-child(3)');
+let visible = document.querySelector('nav');
+let invisible = document.querySelector('header');
+
 let lista = document.querySelector(".listaHospitais li");
 
-function abrirMenu(){ 
-    menu.style.display = 'block';
-    containerMenu.style.display = 'block';
-}
 
-function fecharMenu(){
-    if(containerMenu.style.display === "block"){
-        containerMenu.style.display = "";
-    }
+menu.onclick = function(){
+    barra1.classList.toggle('barrinha1');
+    barra2.classList.toggle('barrinha1');
+    barra3.classList.toggle('barrinha1');
+    visible.classList.toggle('visible');
+    menu.classList.toggle('burguer1');
+    invisible.classList.toggle('invisible');
 }
 
 function listarHospitais(){
@@ -21,7 +24,3 @@ function listarHospitais(){
 }
 
 listarHospitais();
-
-btnMenu.onclick = abrirMenu;
-
-containerMenu.onclick = fecharMenu;

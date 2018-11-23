@@ -6,7 +6,7 @@ module.exports = function (app){
     
     app.post('/', (req, res)=>{
         
-        req.db.collection('hospitais').find({key:req.body.item.toUpperCase()}).toArray((erro, dados)=>{
+        req.db.collection('hospitais').find({descricao:req.body.item.toUpperCase()}).toArray((erro, dados)=>{
             if(erro){
                 res.send('Erro '+ erro);
             }
