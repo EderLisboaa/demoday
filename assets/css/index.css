@@ -93,6 +93,7 @@ footer .container{
 
 .hospital {
     display: flex;
+    align-items: center;
     list-style: none;
     margin: 0;
     margin: 5px 0px;
@@ -101,11 +102,20 @@ footer .container{
     max-width: 1534px;
 }
 
+.hospital img{
+    width: 15vw;
+    height: 15vw;
+    margin: 0px 10px 0px 5px;
+}
+
 .lista{
     display: flex;
     padding: 0px;
 }
 
+.listaHospitais{
+    padding: 0px;
+}
 
 /* Menu hamburguer feito no js */
 .burguer{

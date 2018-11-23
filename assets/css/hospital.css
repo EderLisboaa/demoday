@@ -78,3 +78,78 @@ aside{
 .user{
 }
 
+/* Menu hamburguer feito no js */
+.burguer{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    margin-right: 1.8vw;
+    cursor: pointer;
+    right: 0%;
+    z-index:20;
+    transition: 1s;   
+
+}
+.burguer1{
+    right: 10%;
+}
+.barrinha{
+    box-shadow: 0 0 1px;
+    width: 35px;
+    height: 3px;
+    background-color: black;
+    transition: 0.5s;
+}
+.barrinha:nth-child(2){
+    margin: 10px 0;
+}
+.barrinha1{
+    transform:rotate(135deg);
+    position: absolute;
+}
+.barrinha1:nth-child(2){
+    margin: 0;
+    transform: rotate(-135deg);
+}
+nav{
+    background-color:whitesmoke;
+    width: 90%;
+    margin: 0;
+    height: 60px;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-evenly;
+    top: 0;
+    left: -100%;
+    position: absolute;
+    transition: 0.8s;
+
+}
+header img{
+    height:40px;
+    width:40px;
+}
+header p{
+    display: flex;
+    align-items: center;
+    padding-top: 12%;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+header a{
+    display: flex;
+    Margin-top:10%;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction:column;
+}
+
+.visible{
+    left: 0;
+    box-shadow: 0 0 2px 1px, 0 0 500px;
+}
+
