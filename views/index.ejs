@@ -24,8 +24,8 @@
                     <ul class="listaHospitais">
                         <% try{
                             for(let item of lista){ %>
-                                <a href="./hospital"><li class="hospital" name="<%= item.nome %>"><img src="<%= item.img %>" alt="item.nome"><p><%= item.nome %></p></li></a>
-                                <% }} catch(err){
+                                <a href="/hospital/<%= item.nome %>"><li class="hospital" name="<%= item.nome %>"><img src="<%= item.img %>" alt="<%=item.nome%>"><p><%= item.nome %></p></li></a>
+                                <% }} catch{
                                     console.log("lista vazia");
                                 } %>
                             </ul>

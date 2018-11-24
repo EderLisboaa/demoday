@@ -7,8 +7,12 @@ const express = require ('express');
 const bodyParser = require('body-parser');
 const db = require('express-mongo-db');
 const controler = require('./controlers/routControler');
+const cors = require('cors');
 
 const app = express();
+
+app.use(cors());
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 
 app.set('view engine','ejs');

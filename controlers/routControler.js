@@ -20,7 +20,6 @@ module.exports = function (app){
     });
     
     app.post("/adm", (req,res)=>{
-        console.log(req.bod);
         let especialidades = req.body.especialidades.split(",");
         let esp = [];
         for(let especialidade of especialidades){
@@ -35,18 +34,17 @@ module.exports = function (app){
         });
         res.render("adm");
     });
-    
-    // app.get('/hospital', (req,res)=>{
-    //     console.log(req.body);
-    //     res.render('hospital');
-    // });
 
-    app.get('/hospital', (req, res) => {
-        req.db.collection('hospitais').find().toArray((erro, dados) => {
+    app.get('/hospital', (req,res) => {
+        res.render('hospital');
+    });
+
+      app.get('/hospital/:nome', (req, res) => {   
+        req.db.collection('hospitais').find({nome: req.params.nome}).toArray((erro, dados) => {
           if(!erro){
-            return res.render("hospital", {dados: dados});
+            return res.render("hospital",{dados: dados});
           }
           return res.status(500).send({erro: erro});
-        })
+        });
       });
 }
