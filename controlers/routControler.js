@@ -6,7 +6,7 @@ module.exports = function (app){
     
     app.post('/', (req, res)=>{
         
-        req.db.collection('hospitais').find({descricao:req.body.item.toUpperCase()}).toArray((erro, dados)=>{
+        req.db.collection('hospitais').find({especialidades:req.body.item.toUpperCase()}).toArray((erro, dados)=>{
             if(erro){
                 res.send('Erro '+ erro);
             }
@@ -20,15 +20,33 @@ module.exports = function (app){
     });
     
     app.post("/adm", (req,res)=>{
+        console.log(req.bod);
+        let especialidades = req.body.especialidades.split(",");
+        let esp = [];
+        for(let especialidade of especialidades){
+            esp.push(especialidade.toUpperCase());
+        }
         req.db.collection('hospitais').insert({
-            nome:       req.body.nome.toUpperCase(),
-            img:        req.body.img,
-            descricao:  req.body.descricao.toUpperCase()
+            nome:               req.body.nome.toUpperCase(),
+            img:                req.body.img,
+            especialidades:     esp,
+            localizacao:        req.body.localizacao,
+            descricao:          req.body.descricao
         });
         res.render("adm");
     });
+    
+    // app.get('/hospital', (req,res)=>{
+    //     console.log(req.body);
+    //     res.render('hospital');
+    // });
 
-    app.get('/hospital', (req,res)=>{
-        res.render('hospital');
-    });
+    app.get('/hospital', (req, res) => {
+        req.db.collection('hospitais').find().toArray((erro, dados) => {
+          if(!erro){
+            return res.render("hospital", {dados: dados});
+          }
+          return res.status(500).send({erro: erro});
+        })
+      });
 }

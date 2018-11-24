@@ -14,31 +14,43 @@
         <aside>
             <div class="hsp_header">
                 <div>
-                    <a href="https://v3drmh070ixn5qon-zippykid.netdna-ssl.com/wp-content/uploads/2017/03/hospital-albert-einstein-disponibiliza-curso-experiencia-do-paciente.jpg">
-                        <img src="https://v3drmh070ixn5qon-zippykid.netdna-ssl.com/wp-content/uploads/2017/03/hospital-albert-einstein-disponibiliza-curso-experiencia-do-paciente.jpg" alt="hospital">
-                        </a> 
-                        <a href="https://www.google.com/maps/dir/-23.4733805,-46.6722699/hospital+albert+einstein/@-23.5387488,-46.7774724,12z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x94ce56dc138906d5:0xfa2f75da82a1dd3c!2m2!1d-46.7151777!2d-23.6000939">Como chegar</a>
+                    <%  let nome;
+                    let img;
+                    let especialidades;
+                    let localizacao;
+                    let descricao;
+                    
+                    for(let item of dados){
+                        nome           = item.nome;
+                        img            = item.img;
+                        especialidades = item.especialidades;
+                        localizacao    = item.localizacao;
+                        descricao      = item.descricao;
+                    }
+                    %>
+                    <a href="<%= img %>"><img src="<%= img %>" alt="<%= nome %>"></a> 
+                    <a href="<%= localizacao%>">Como chegar</a>
+                </div>
+                <p><%= descricao %></p>
+            </div>
+            <div class="hsp_info">
+                <p></p>
+                <p></p>
+            </div>
+        </aside>
+        <section class="coments">
+            <ul>
+                <li>
+                    <div class="user">
+                        <img src="./../assets/icons/icon_user.png" alt="usuario">
+                        <p>Usuario 1</p>
                     </div>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui excepturi ad unde temporibus architecto quae non obcaecati fugit, eligendi error eius saepe hic quidem eaque natus officiis. Quos, nulla perspiciatis.</p>
-                </div>
-                <div class="hsp_info">
-                    <p></p>
-                    <p></p>
-                </div>
-            </aside>
-            <section class="coments">
-                <ul>
-                    <li>
-                        <div class="user">
-                            <img src="./../assets/icons/icon_user.png" alt="usuario">
-                            <p>Usuario 1</p>
-                        </div>
-                        <div class="user_coments">
-                            <p></p>
-                        </div>
-                    </li>
-                </ul>
-            </section>
+                    <div class="user_coments">
+                        <p></p>
+                    </div>
+                </li>
+            </ul>
         </section>
-    </body>
-    </html>
+    </section>
+</body>
+</html>

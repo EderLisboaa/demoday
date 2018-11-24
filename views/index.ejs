@@ -24,7 +24,7 @@
                     <ul class="listaHospitais">
                         <% try{
                             for(let item of lista){ %>
-                                <a href="./hospital"><li class="hospital"><img src="<%= item.img %>" alt="item.nome"><p><%= item.nome %></p></li></a>
+                                <a href="./hospital"><li class="hospital" name="<%= item.nome %>"><img src="<%= item.img %>" alt="item.nome"><p><%= item.nome %></p></li></a>
                                 <% }} catch(err){
                                     console.log("lista vazia");
                                 } %>
@@ -37,5 +37,6 @@
                             </section>
                         </section>   
                         <%- include('shared/footer') %>
+                        <script src="./../assets/scripts/script.js"></script>
                     </body>
                     </html>

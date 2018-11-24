@@ -17,6 +17,20 @@ menu.onclick = function(){
     invisible.classList.toggle('invisible');
 }
 
+
+
+
+
+function atualizar(){
+    fetch("http://localhost:5000/hospitais").then(resposta => resposta.json()).then(dados => construirLista(dados.produtos)).catch(erro => console.log(`ERRO: ${erro}`));
+  }
+
+
+
+
+lista.onclick() = atualizar();
+
+
 function listarHospitais(){
     if(lista !== null){
         document.querySelector(".msg").style.display = "none";

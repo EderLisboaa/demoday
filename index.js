@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded());
 
 app.set('view engine','ejs');
 
-app.use(db('mongodb://turma:turma10@ds223653.mlab.com:23653/turma'));
+app.use(db('mongodb://mLab:demoday10@ds163650.mlab.com:63650/saude'));
 app.use('/assets', express.static('assets'));
 
 // estes dados são enviados na lista. Aqui é apenas um exemplo. Será inserido nesta variável
