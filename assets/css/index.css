@@ -1,7 +1,12 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 body{
-    height: 100%;
-    margin:0;
-    padding:0;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -12,7 +17,7 @@ header{
     height: 10vh;
     justify-content: space-around;
     align-items: center;
-    background-color: #007c8a;
+    background-color: #fceec9dc;
 }
 
 h1 img{
@@ -22,7 +27,6 @@ h1 img{
 
 h1{
     display: flex;
-    margin: 0;
     align-items: center;
     height: 10px;
     font-size: 15pt;
@@ -36,25 +40,52 @@ h1 span{
 .busca{
     display: flex;
     width: 100vw;
-    padding: 0;
-    margin: 0;
+    justify-content: center;
+    align-items: center;
+}
+.input_busca{
+    display: flex;
+    border: 1px solid rgb(190, 17, 17);
+    border-radius: 20px;
+    margin: 10px 0;
+    padding: 15px 5px;
+    width: 80%;
+    height: 20px;
     justify-content: space-between;
+    align-items: center;
 }
 
-.busca input{
-    margin: 0;
-    padding: 0 5px;
-    width: 64vw;
+.input_busca input{
+    border: none;
+    width: 80%;
+    padding: 10px;
+    font-size: 12pt;
+    font-family:'Fjalla One', sans-serif;
 }
 
-.busca select{
-    margin: 0;
-    width: 34vw;
+.btn_pesquisar{
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: rgb(190, 17, 17);
 }
 
+.btn_pesquisar img{
+    width: 20px;
+    height: 20px;
+}
 
 section{
-    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 70vh;
+    max-width: 100vw;
+    overflow: auto;
 }
 
 .msg{
@@ -72,11 +103,12 @@ section{
 }
 
 footer{
-    bottom: 0;
+    position: absolute;
+    bottom: 0px;
     display: flex;
-    height: 20vh;
+    height: 100px;
     width: 100vw;
-    background-color: #003644; 
+    background-color: #c9bea2dc; 
 }
 
 a{
@@ -95,11 +127,11 @@ footer .container{
     display: flex;
     align-items: center;
     list-style: none;
-    margin: 0;
     margin: 5px 0px;
-    border: 0.7px solid black;
-    width: 100vw;
-    max-width: 1534px;
+    padding: 5px;
+    border: 0.5px solid lightgrey;
+    width: 90vw;
+    border-radius: 10px;
 }
 
 .hospital img{
@@ -121,73 +153,78 @@ footer .container{
 .burguer{
     display:flex;
     align-items:center;
-    justify-content: center;
-    flex-direction: column;
     width: 50px;
     height: 50px;
-    overflow: hidden;
-    margin-right: 1.8vw;
     cursor: pointer;
-    right: 0%;
     z-index:20;
-    transition: 1s;   
+}
 
-}
-.burguer1{
-    right: 10%;
-}
-.barrinha{
-    box-shadow: 0 0 1px;
-    width: 35px;
-    height: 3px;
-    background-color: black;
-    transition: 0.5s;
-}
-.barrinha:nth-child(2){
-    margin: 10px 0;
-}
-.barrinha1{
-    transform:rotate(135deg);
-    position: absolute;
-}
-.barrinha1:nth-child(2){
-    margin: 0;
-    transform: rotate(-135deg);
-}
+
 nav{
+    display: flex;
     background-color:whitesmoke;
-    width: 90%;
-    margin: 0;
+    width: 75%;
     height: 60px;
     flex-direction: column;
-    height: 100vh;
-    justify-content: space-evenly;
+    height: 80vh;
     top: 0;
     left: -100%;
     position: absolute;
     transition: 0.8s;
 
 }
+
+nav > div:first-child{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 70px auto;
+}
+
+nav img{
+    border: 1px solid rgb(190, 17, 17);
+    border-radius: 50%;
+    padding: 10px;
+}
+
 header img{
     height:40px;
     width:40px;
 }
 header p{
+    margin-top: 20px;
     display: flex;
     align-items: center;
-    padding-top: 12%;
-    justify-content: space-evenly;
     flex-direction: column;
 }
 header a{
     display: flex;
-    Margin-top:10%;
+    Margin-top: 10%;
     align-items: center;
     justify-content: space-evenly;
-    flex-direction:column;
+    flex-direction: column;
 }
 
 .visible{
     left: 0;
     box-shadow: 0 0 2px 1px, 0 0 500px;
+}
+
+.btn_home{
+    position: fixed;
+    bottom: 50px;
+    right: 10px;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(190, 17, 17);
+    border-radius: 50%;
+}
+
+.btn_home img {
+    height: 30px;
+    width: 30px;
 }

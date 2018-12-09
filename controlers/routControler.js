@@ -6,9 +6,21 @@ module.exports = function (app){
     
     app.post('/', (req, res)=>{
         
-        req.db.collection('hospitais').find({especialidades:req.body.item.toUpperCase()}).toArray((erro, dados)=>{
+        req.db.collection('hospitais').find({especialidades:req.body.item.toUpperCase().trim()}).toArray((erro, dados)=>{
             if(erro){
                 res.send('Erro '+ erro);
+            }
+            let nome;
+            for(let dado of dados){
+                nome = dado.nome;
+            }
+
+            if(nome === undefined){
+                res.render('index', {lista: [{
+                    nome:"Hospital não encontrado", 
+                    img:"/assets/icons/icons8-hospital-3-filled-50.png"
+                }]});
+                return;
             }
             res.render('index', {lista: dados});
         })
@@ -34,17 +46,17 @@ module.exports = function (app){
         });
         res.render("adm");
     });
-
+    
     app.get('/hospital', (req,res) => {
         res.render('hospital');
     });
-
-      app.get('/hospital/:nome', (req, res) => {   
+    
+    app.get('/hospital/:nome', (req, res) => {   
         req.db.collection('hospitais').find({nome: req.params.nome}).toArray((erro, dados) => {
-          if(!erro){
-            return res.render("hospital",{dados: dados});
-          }
-          return res.status(500).send({erro: erro});
+            if(!erro){
+                return res.render("hospital",{dados: dados});
+            }
+            return res.status(500).send({erro: erro});
         });
-      });
+    });
 }

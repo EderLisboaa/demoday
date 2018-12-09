@@ -7,12 +7,10 @@
         <!-- este formulário envia os dados inseridos nos campos para o back-end assim que a tecla enter
             é pressionada no campo de texto -->
             <form class="busca" method="POST">
-                <select id="select_seletor" name="seletor" id="seletor">
-                    <option value="categoria">Categorias</option>
-                    <option value="hospital">Hospital</option>
-                    <option value="problema">Problema</option>
-                </select>
-                <input id="input_busca" name="item" type="search" placeholder="Buscar...">
+                <div class="input_busca">
+                    <input name="item" type="search" placeholder="Buscar...">
+                    <button class="btn_pesquisar"><img src="/assets/icons/icons8-search-30.png" alt="pesquisar"></button>
+                </div>
             </form>
             
             <!-- O back-end envia uma lista com itens para ca que conterá os hospitais buscados
@@ -37,6 +35,7 @@
                             </section>
                         </section>   
                         <%- include('shared/footer') %>
+                        <%- include('shared/btn_home') %>
                         <script src="./../assets/scripts/script.js"></script>
                     </body>
                     </html>
